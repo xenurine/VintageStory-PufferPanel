@@ -6,7 +6,12 @@ A template to crate a [Vintage Story](https://www.vintagestory.at/) server in [P
 This template will do the following; 
 
     1. Download the specified vintage story server
-    2. Extract the server archive into /vintage story.
-    3. Delete the original server archive
+    2. Download and setup DotNet
+    3. Extract the server archive into /vintage story.
+    4. Delete the original server archive
     
 This template is still under development. More is planned for this template 
+
+### Versions 
+
+for latest versions of Vintage Story which use DotNet use ``VintageStory.json`` for old versions of vintage story which use mono use ``VintageStory-legacy.json`` 
