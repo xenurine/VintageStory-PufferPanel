@@ -1,53 +1,38 @@
 {
-  "name": "VintageStory Server",
+  "name": "VintageStory",
   "display": "VintageStory",
-  "type": "vintagestory-dotNert",
+  "type": "vintagestory-mono",
   "install": [
     {
       "files": [
-        "https://cdn.vintagestory.at/gamefiles/stable/vs_server_linux-x64_${version}.tar.gz",
-        "https://download.visualstudio.microsoft.com/download/pr/08af0433-9ec3-4604-9d1c-85e3922a4524/396b340b4ee38765d7462e2fc61a5e3c/aspnetcore-runtime-${dotNet}-linux-x64.tar.gz"
+        "https://cdn.vintagestory.at/gamefiles/stable/vs_server_${version}.tar.gz"
       ],
       "type": "download"
     },
     {
       "commands": [
         "mkdir vintagestory",
-        "tar --no-same-owner -xzvf vs_server_linux-x64_${version}.tar.gz -C vintagestory",
-        "rm vs_server_linux-x64_${version}.tar.gz",
-        "echo 'installing .net'",
-        "mkdir dotnet",
-        "tar -xf aspnetcore-runtime-${dotNet}-linux-x64.tar.gz -C dotnet",
-        "rm aspnetcore-runtime-${dotNet}-linux-x64.tar.gz",
-        "mkdir data"
+        "tar --no-same-owner -xzvf vs_server_${version}.tar.gz -C vintagestory",
+        "rm vs_server_${version}.tar.gz"
       ],
       "type": "command"
     }
   ],
   "run": {
     "stop": "/stop",
-    "command": "./vintagestory/VintagestoryServer --dataPath data",
-    "workingDirectory": "",
+    "command": "mono VintagestoryServer.exe --dataPath ./data",
+    "workingDirectory": "vintagestory",
     "pre": [],
     "post": [],
-    "environmentVars": {
-      "DOTNET_ROOT": "dotnet"
-    }
+    "environmentVars": {}
   },
   "data": {
-    "dotNet": {
-      "type": "string",
-      "desc": ".Net Vesion, Leave as Default or see <a href='https://dotnet.microsoft.com/en-us/download/dotnet/7.0' > For Versions . </a>",
-      "display": ".Net Channel",
-      "required": true,
-      "value": "7.0.10"
-    },
     "version": {
       "type": "string",
       "desc": "The Version of Vintage Story (<a href='http://account.vintagestory.at/downloads'>Vintagestory versions</a>). Must be specified as a release number, e.g. 1.16.5",
       "display": "Version",
       "required": true,
-      "value": "1.18.10"
+      "value": "1.16.5"
     }
   },
   "supportedEnvironments": [
