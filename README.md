@@ -1,5 +1,5 @@
 # PufferPanel Template for [Vintage Story](https://www.vintagestory.at/)
-A template to crate a [Vintage Story](https://www.vintagestory.at/) server in [Puffer Panel](https://www.pufferpanel.com/) on linux.
+A template to create a [Vintage Story](https://www.vintagestory.at/) server in [Puffer Panel](https://www.pufferpanel.com/) on linux.
 
 ## About This Template 
 
@@ -14,4 +14,4 @@ This template is still under development. More is planned for this template
 
 ### Versions 
 
-for latest versions of Vintage Story which use DotNet use ``VintageStory.json`` for old versions of vintage story which use mono use ``VintageStory-legacy.json`` 
+for latest versions of Vintage Story, for the older Mono Server please refer to the classic branch
